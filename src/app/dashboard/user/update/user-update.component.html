@@ -1,0 +1,77 @@
+<form autocomplete="off" [formGroup]="userModificationFormGroup">
+
+  <div fxLayout="row wrap" fxLayoutAlign="center stretch">
+    <div fxLayout="row" fxFlex="80">
+      <h4 class="register__text-box--heading"></h4>
+    </div>
+    <br>
+    <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+      fxLayoutAlign="space-between stretch" fxFlex="80">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>User ID</mat-label>
+        <input matInput placeholder="UserId" required formControlName="userId" maxlength=10>
+        <mat-error>This field is required.</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+      fxLayoutAlign="space-between stretch" fxFlex="80">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" required formControlName="email" maxlength=50>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+      fxLayoutAlign="space-between stretch" fxFlex="80">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>User Name</mat-label>
+        <input matInput placeholder="UserName" required formControlName="userName" maxlength=30>
+        <mat-error>This field is required.</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+      fxLayoutAlign="space-between stretch" fxFlex="80">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker1" placeholder="Date of birth" formControlName="dob" maxlength=10>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error>Invalid</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+      fxLayoutAlign="space-between stretch" fxFlex="80">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>NIC Number</mat-label>
+        <input matInput placeholder="NIC" required formControlName="nic" maxlength=11>
+        <mat-error>Please enter a valid NIC.</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+      fxLayoutAlign="space-between stretch" fxFlex="80">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>Contact Number</mat-label>
+        <input type="tel" matInput placeholder="Contact" formControlName="contactNo"
+          onkeypress='return (event.charCode >= 48 && event.charCode <= 57 && event.charCode <= 191)' maxlength=10>
+        <mat-error>Please enter a valid contact number</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+      fxLayoutAlign="space-between stretch" fxFlex="80">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>Address</mat-label>
+        <input type="tel" matInput placeholder="Addresss" formControlName="address" maxlength=100>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+      fxLayoutAlign="space-between stretch" fxFlex="80">
+      <div class="register__text-box__btn--config">
+        <button mat-raised-button (click)="userModifire()" color="primary" type="button"
+          [disabled]="userModificationFormGroup.invalid">Modify</button>
+        <button mat-raised-button color="warn" class="ml-3" routerLink="/dashboard/home">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>

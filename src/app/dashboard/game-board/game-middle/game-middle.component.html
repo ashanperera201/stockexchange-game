@@ -1,0 +1,55 @@
+<div class="layout">
+    <div class="layout__grid-section">
+        <kendo-grid [data]="shares" class="mat-elevation-z6" [height]="312" [resizable]="true">
+            <kendo-grid-column field="Time" title="Time" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="companyId" title="Company Id" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="name" title="Company Name" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="quantity" title="Number of shares" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="currentPrice" title="Price" width="250">
+            </kendo-grid-column>
+        </kendo-grid>
+    </div>
+    <form class="layout__form-section mat-elevation-z6" [formGroup]="gameProceedFormGroup">
+        <div class="layout__header">
+            <h4>Player Name : {{userViewName}}</h4>
+        </div>
+        <div class="layout__elements">
+            <div class="layout__elements--left">
+                <mat-form-field class="layout__elements--width">
+                    <mat-label>Company Details</mat-label>
+                    <mat-select required formControlName="company">
+                        <mat-option *ngFor="let company of commonGameData?.value0" [value]="company.companyId">
+                            {{company.name}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>This field is required.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="layout__elements--left">
+                <mat-form-field class="layout__elements--width">
+                    <mat-label>Buy/sell</mat-label>
+                    <mat-select required formControlName="buyOrSell">
+                        <mat-option *ngFor="let process of processData" [value]="process.id">
+                            {{process.type}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>This field is required.</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="layout__form">
+            <mat-form-field appearance="outline" class="layout__form--element">
+                <mat-label>Quantity</mat-label>
+                <input matInput placeholder="Quantity" required formControlName="quantity"
+                    onkeypress='return (event.charCode >= 48 && event.charCode <= 57 && event.charCode <= 191)'
+                    maxlength=5>
+                <mat-error>This field is required.</mat-error>
+            </mat-form-field>
+            <button class="layout__form--btn" mat-raised-button color="primary" (click)="pushGamePlayData()"
+                [disabled]="verifyButtonAvailability()">Proceed</button>
+        </div>
+    </form>

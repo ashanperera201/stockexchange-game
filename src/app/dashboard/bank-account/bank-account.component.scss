@@ -1,0 +1,216 @@
+@import "../../../styles/mixins";
+
+.content-layout{ 
+  width: 100%;
+  
+  &__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    @include respond(tab-port){
+      justify-content: center;
+    }
+
+    h4{
+      font-size: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+      font-family: serif;
+      font-weight: bold;
+
+      @include respond(tab-port){
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__balance-label{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      position: relative;
+      bottom: 2.4rem;
+
+      @include respond(tab-port){
+        justify-content: center;
+        bottom: 0;
+      }
+
+      h5{
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include respond(tab-port){
+          font-size: 1rem;
+        }
+      }
+  }
+
+  &__form-layout{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 60%;
+
+    @include respond(tab-port){
+        width: 100%;
+        position: relative;
+        flex-direction: column;
+        top: 55%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-40%, 16%);
+    }
+
+    mat-form-field{
+      width: 50%;
+
+      @include respond(tab-port){
+        width: 80%;
+      }
+
+      &:not(:first-child){
+        margin-left: 1rem;
+
+        @include respond(tab-port){
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__chart-layout{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    @include respond(tab-port){
+      flex-direction: column;
+    }
+    
+    canvas{
+      display: flex !important;
+      height: 25rem !important;
+      width: 100% !important;
+      padding: 1rem;
+
+      @include respond(tab-port){
+        display: flex !important;
+        height: auto !important;
+        width: 100% !important;
+      }
+
+      @include respond(lap-top){
+        display: flex !important;
+        height: 25rem !important;
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .register{
+//   &__button{
+//     padding-top: 1rem;
+//     margin-right: 2px;
+//     .btn{
+//       display: inline-block;
+//       @include bootstrap-auth-button;
+//       width:12rem !important;
+//       color: #FFF;
+//     }
+
+//   }
+// }
+
+// .set-position-chart{
+//   position: relative;
+//   bottom: 20px;
+// }
+
+// bank{
+//   &__widgets{
+//     cursor: pointer;
+//   }
+// }
+// dropdowns{
+//   display: inline-block;
+// }
+
+// .card {
+//   background-color: #FFF;
+//   -webkit-box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.47);
+//   -moz-box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.47);
+//   box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.47);
+
+//   .card-icon {
+//     i {
+//       width: 50px;
+//       height: 50px;
+//       line-height: 50px;
+//       text-align: center;
+//       border-radius: 50%;
+//       font-size: 3rem;
+//     }
+//   }
+
+//   .legend{
+//     span:first-child{
+//       width: 10px;
+//       height: 10px;
+//     }
+//   }
+
+//   .card-title {
+//     color: rgba(#3d4465, .8);
+//   }
+
+//   .card-icon {
+//     i {
+//       color: #98a4c7;
+//     }
+//   }
+
+//   .card-footer {
+//     border-top: 1px solid #f2f3f8;
+//     background: none;
+//   }
+
+//   .card-title {
+//     border-bottom: 1px solid #f2f3f8;
+//   }
+// }

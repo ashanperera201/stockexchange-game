@@ -1,0 +1,94 @@
+@import "../../../styles/mixins";
+@import "../../../styles/animations";
+
+.header{
+    height: 100vh;
+    background-image: linear-gradient(
+        to right bottom,rgba(#48367d,0.6),rgba(#241842,0.8)),
+        url('../../../assets/images/backgrounds/business-stock-market-background.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative; 
+
+    &__logo-box{
+        position: absolute;
+        top: 2rem;
+        left: 4rem;
+    }
+
+    &__logo{
+        height: 3.5rem;
+    }
+
+    &__logo-text{
+        text-transform: uppercase;
+        font: 200;
+        font-size: 1.5rem;
+        letter-spacing: .5rem;
+        color: #FFF;
+        position: relative;
+        top: 0.2rem;
+        left: 1rem;
+        display: inline-block;
+        @include common-heading-behaviour;
+    }
+
+    &__text-box{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }  
+
+    &__btn-group{
+        margin-top: 4rem;
+    } 
+}
+
+.heading-primary{
+    color: #FFF;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    @include respond(phone){
+        margin: 0;
+    }
+
+    &--main {        
+        font-size: 2.5rem;
+        font-weight: 400;
+        letter-spacing: 1rem;       
+        @include common-heading-behaviour;
+
+        @include respond(phone){
+            position: relative !important;
+            top: 2rem !important;
+            font-size: 1.5rem !important;
+            text-align: center !important;
+        }
+
+       
+
+    }   
+}
+
+.mat-raised-button{
+    @include respond(phone){
+        width: 60%;
+    }
+    @include customized-mat-button();
+}   
+
+
+.m-l-2{
+    @include respond(phone){
+        margin: 0 !important;
+    }
+  
+    @include respond(tab-port){
+        margin: 0 !important;
+    }
+
+}

@@ -1,0 +1,91 @@
+<div class="content-layout">
+    <div class="content-layout__header">
+        <h3 class="text-muted">User Helper</h3>
+    </div>
+    <div class="content-layout__btn-section">
+        <button mat-raised-button (click)="triggerBack()" color="primary">Back</button>
+    </div>
+    <div class="content-layout__body">
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="content-layout__body--heading">
+                        What is
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p> {{this.configObject.whatIs}}</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="content-layout__body--heading">
+                        Rules and regulations
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p> {{this.configObject.rules}}</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="content-layout__body--heading">
+                        Steps to follow
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Step 01 : Use your google account to login to the game.</p>
+                <p>Step 02 : Click on "Create group" menu on dash board.Give relavent data and create a group.</p>
+                <p>Step 03 : Click on "Join group" menu on dash board.</p>
+                <p>Step 04 : Select a group and click on "Join me" button to join to the game.</p>
+                <p>Step 05 : Click start button on "Lobby" (available only for the group creator).</p>
+                <p>Step 06 : Select a company from dropdown menu.</p>
+                <p>Step 07 : Select Buy/Sell option from the dropdown menue.</p>
+                <p>Step 08 : Enter the shares quantity.</p>
+                <p>Step 09 : Click on "Process" button.</p>
+                <p>Step 10 : Repeat STEP 06 to STEP 09 for each round.</p>
+                <h5>NOTE:</h5>
+                <p> -You must wait at lobby until other players join to the game.(Minimum: 2 players,Maximum:4 players
+                    or
+                    more)</p>
+                <p> -Each game consist of 5 rounds.</p>
+                <p>-In each round you can buy/sell any number of shares within 2 minute.</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="content-layout__body--heading">
+                        Calculation formula
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>
+                    {{configObject.formula}}
+                </p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="content-layout__body--heading">
+                        Footer
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>
+                    {{configObject.footer}}
+                </p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="content-layout__body--heading">
+                        Documentation
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <a (click)="loadWindow()">
+                    Stark application specification document
+                </a>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="content-layout__body--heading">
+                        End Game
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>
+                    {{configObject.end}}
+                </p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

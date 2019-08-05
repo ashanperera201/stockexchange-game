@@ -1,0 +1,88 @@
+@import "../../../styles/mixins";
+
+.layout{
+    height: auto;
+
+    &__header{
+        position: absolute;
+        h1{            
+            font-weight: 400;
+        }
+    }
+
+    &__creator-name{
+        position: relative;
+        display: inline-block;
+        font-weight: 200;
+        font-size: 1.5rem;
+        left: 39rem;
+        bottom: 3rem;
+        font-weight: bold;
+
+        @include  respond(phone){
+            position: relative;
+            right: 2rem;
+            display: flex;
+            left: 0;
+            top: 0;
+            flex-direction: row;
+            font-size: 1rem;
+            justify-content: center;
+            width: auto;
+        }
+    }    
+
+    &__body{
+        top: 7rem;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+
+        @include  respond(phone){
+           margin: .4rem;
+           position: relative;
+        }
+
+        &--elements{
+            flex-basis: calc((100% - 60px) / 4);            
+            margin: 0 10px;
+            height: auto;
+            &:first-child{
+                margin-left: 0;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+
+            img{
+                height: 12rem;
+                border-radius: 100%;
+                position: relative;
+                left: 0.5rem;
+                padding: 1.2rem;
+            }
+        }
+
+        &--name{
+            h4{
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+
+    &__button-panel{
+        position: relative;
+        top: 10rem;
+        margin-top: 1rem;
+        
+        .mat-raised-button{
+            border-radius: 0 !important;
+            width: auto !important;
+            height: 3rem !important;
+            bottom: 1rem;
+            font-size: 1rem !important;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import "../../../styles/mixins";
+
+.wrap-close{
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+h4{
+  position: relative;
+  bottom: 1rem;
+}
+
+.chart-container{
+  display: block;
+  width: 1055px;
+
+  canvas{
+    height: 322px !important;
+    padding: 1rem !important;
+  }  
+}
+
+
+
+
+
+
+

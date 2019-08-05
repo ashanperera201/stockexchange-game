@@ -1,0 +1,46 @@
+<div class="layout">
+    <h3 class="layout__heading">Round {{ roundCount < 6 ? roundCount : 5 }}</h3>
+    <div class="layout__heading-score">
+        <h4>Account Balance : {{ playerAmount ? playerAmount : 0}} </h4>
+        <div class="layout__timer">
+            <countdown class="layout__live-time" [config]="config" (finished)="timeTickerChangeOutput()">
+                $!h!:$!m!:$!s!
+            </countdown>
+        </div>
+    </div>
+</div>
+<div class="layout-body">
+    <div class="layout-body__left">
+        <mat-form-field>
+            <mat-label>Client</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let client of  clients" (onSelectionChange)="getSelectedClientObject(client)"
+                    [value]="client.id">
+                    {{client.client}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="layout-body__left">
+        <mat-form-field>
+            <mat-label>Analysis</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let analyse of analysis" (onSelectionChange)="getSelectedAnalysisObject(analyse)"
+                    [value]="analyse.id">
+                    {{analyse.analyse}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="layout-body__left">
+        <mat-form-field>
+            <mat-label>Statistic</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let statistic of statistics"
+                    (onSelectionChange)="getSelectedStatisticObject(statistic)" [value]="statistic.id">
+                    {{statistic.statistic}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>

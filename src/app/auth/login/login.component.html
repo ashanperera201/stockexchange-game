@@ -1,0 +1,19 @@
+<div class="header">
+    <div class="header__logo-box">
+        <img src="../../../assets/images/logos/star_logo.png" alt="logo" class="header__logo">
+        <span class="header__logo-text">stark</span>
+    </div>
+    <div class="header__text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary--main" *ngIf="!isRegister"> Stock market game</span>
+            <div class="header__btn-group" *ngIf="!isRegister">
+                <button mat-raised-button color="warn" (click)="loginWithGoogle()">Sign in with google</button>
+                <button mat-raised-button class="m-l-2" (click)="signUp()">Sign up from here</button>
+            </div>
+        </h1>
+        <div *ngIf="isRegister">
+            <app-signup (backToLogin)="triggerBackEvent($event)">
+            </app-signup>
+        </div>
+    </div>
+</div>

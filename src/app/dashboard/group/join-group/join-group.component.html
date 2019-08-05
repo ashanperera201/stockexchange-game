@@ -1,0 +1,23 @@
+<div class="join-group">
+    <div class="join-group__form mat-elevation-z2">
+        <h4 class="join-group__form__header text-muted">Join Group</h4>
+        <div class="join-group__grid">
+            <kendo-grid [data]="gridData" class="mat-elevation-z5">
+                <kendo-grid-column field="groupName" title="Group Name" width="250">
+                </kendo-grid-column>
+                <kendo-grid-column field="players" title="Maximum players" width="200">
+                </kendo-grid-column>
+                <kendo-grid-column field="userName" title="Creator Name" width="250">
+                </kendo-grid-column>
+                <kendo-grid-command-column width="120" [locked]="false">>
+                    <ng-template kendoGridCellTemplate let-dataItem>
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <button mat-raised-button color='accent' (click)="openLobby(dataItem)"
+                                [disabled]="this.groupName == dataItem.groupName">Join me</button>
+                        </div>
+                    </ng-template>
+                </kendo-grid-command-column>
+            </kendo-grid>
+        </div>
+    </div>
+</div>

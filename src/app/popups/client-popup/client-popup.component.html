@@ -1,0 +1,24 @@
+<div class="client-layout">
+    <div class="client-layout__header">
+        <h3>Client Portfolio</h3>
+        <button mat-icon-button type="button" (click)="closeEvent()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="client-layout__body">
+        <kendo-grid [data]="clientDataList" class="mat-elevation-z6" [height]="350">
+            <kendo-grid-column field="userName" title="User Name" width="100">
+            </kendo-grid-column>
+            <kendo-grid-column field="companyName" title="Company Name" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="marketPrice" title="Market Price" width="150">
+            </kendo-grid-column>
+            <kendo-grid-column field="profitLoss" title="Return In Hand" width="150">
+            </kendo-grid-column>
+            <kendo-grid-column field="quantity" title="Quantity" width="100">
+            </kendo-grid-column>
+            <kendo-grid-column field="totalAmount" title="Total Investment" width="150">
+            </kendo-grid-column>
+        </kendo-grid>
+    </div>
+</div>

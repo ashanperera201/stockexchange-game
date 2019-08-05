@@ -1,0 +1,26 @@
+.client-layout{
+    width: 100%;
+
+    &__header{
+        h3{
+            font-size: 2rem;
+            letter-spacing: .1rem;
+            font-weight: 400;
+        }
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;       
+
+        button{
+            background-color: #F5F5F5;
+        }
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        top: 1.5rem;
+    }
+}

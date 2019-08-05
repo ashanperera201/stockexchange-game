@@ -1,0 +1,27 @@
+<div class="close-btn">
+    <button mat-icon-button type="button" (click)="closeTheSummeryModal()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<div class="header-content">
+    <div class="header-content__summery">
+        <h3>Game Summary</h3>
+    </div>
+    <div class="header-content__groupName">
+        <h4>Group Name : {{groupName}}</h4>
+    </div>
+</div>
+<div class="layout-content">
+    <div class="layout-content__profile-content mat-elevation-z5" *ngFor="let game of gameObjectList; index as i">
+        <img [src]="getProfileImage(game)" alt="avator">
+        <div class="layout-content__profile-content--user-info">
+            <h4>{{game?.userName}}</h4>
+            <h5>
+                {{ i == 0 ? 'First Place':i == 1 ? 'Second Place': i == 2 ? 'Third Place' : i == 3 ? 'Fourth Place':''}}
+            </h5>
+            <h5>{{ this.AppendProfitLossOutput(game?.amount,game?.initialValue) }}</h5>
+            <p>Congratulations, {{i == 0 ? 'you won the game.': i == 1 ? 'you have earned second place.':
+                i == 3 ? ' you have earned third place.' : 'you have earned fourth place.'}}</p>
+        </div>
+    </div>
+</div>

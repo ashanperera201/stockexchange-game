@@ -1,0 +1,118 @@
+<div class="dashboard">
+    <h4 class="text-muted">Dashboard</h4>
+
+    <div class="row m-t-2 dashboard__widgets">
+        <div class="col-md-6 col-lg-3 widget-responsive" *ngFor="let widget of this.widgetArray">
+            <div class="card border-0 rounded-0 mat-elevation-z5">
+                <div class="card-body">
+                    <div class="card-innerBody d-flex align-items-center">
+                        <div class="card-icon text-light">
+                            <i class="fas fa-dollar-sign" aria-hidden="true"
+                                *ngIf="widget.sectorId == this.dashboardEnum.SECTOR1.toString()"></i>
+                            <i class="fa fa-dolly-flatbed" aria-hidden="true"
+                                *ngIf="widget.sectorId == this.dashboardEnum.SECTOR2.toString()"></i>
+                            <i class="fa fa-exchange-alt" aria-hidden="true"
+                                *ngIf="widget.sectorId == this.dashboardEnum.SECTOR3.toString()"></i>
+                            <i class="fa fa-industry" aria-hidden="true"
+                                *ngIf="widget.sectorId == this.dashboardEnum.SECTOR4.toString()"></i>
+                        </div>
+                        <div class="ml-auto">
+                            <h3 class="card-label text-right text-muted">{{widget.name}}</h3>
+                            <p class="card-label text-right text-muted">Total Amount</p>
+                            <h4 class="card-text text-right ">
+                                {{widget.totalAmount}}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex">
+                    <small class="text-muted">Quantity</small>
+                    <small class="text-success ml-auto">
+                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                        {{widget.totalQuantity}}
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-t-2">
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card border-0 rounded-0 mat-elevation-z5">
+                <div class="card-title mb-1 p-3 d-flex">
+                    <h6>Line chart for current price and original price for particular company.</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="chart-line" width="2" height="1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card border-0 rounded-0 mat-elevation-z5">
+                <div class="card-title mb-1 p-3 d-flex">
+                    <h6>Chart bar for quantity with gained loss for particular company.</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="chart-bar" width="2" height="1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-t-2 set-position-chart">
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card border-0 rounded-0 mat-elevation-z5">
+                <div class="card-title mb-1 p-3 d-flex">
+                    <h6>Bar chart for gained loss for particular company.</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="bar-chart" width="2" height="1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card border-0 rounded-0 mat-elevation-z5">
+                <div class="card-title mb-1 p-3 d-flex">
+                    <h6>Pie chart for quantity that holds by each share.</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="pie-chart" width="2" height="1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-t-2 set-position-chart">
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card border-0 rounded-0 mat-elevation-z5">
+                <div class="card-title mb-1 p-3 d-flex">
+                    <h6>Radar chart for current price,original price,per share.</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="radar-chart" width="2" height="1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card border-0 rounded-0 mat-elevation-z5">
+                <div class="card-title mb-1 p-3 d-flex">
+                    <h6>Scatter chart</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="scatter" width="2" height="1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

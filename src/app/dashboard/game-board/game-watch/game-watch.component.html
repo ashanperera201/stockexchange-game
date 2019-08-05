@@ -1,0 +1,93 @@
+<div class="content-layout">
+    <div class="content-layout__header">
+        <h4>watch</h4>
+    </div>
+    <div class="content-layout__drop-items">
+        <mat-form-field>
+            <mat-label>Watch files</mat-label>
+            <mat-select [disabled]="isWatchDropDownDisabled">
+                <mat-option>Option-1</mat-option>
+                <mat-option>Option-2</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Sector</mat-label>
+            <mat-select matNativeControl (valueChange)="triggerValueChangeForSectorDropDown($event)">
+                <mat-option *ngFor="let sector of this.commonGameData?.value1" [value]="sector.sectorId">
+                    {{sector.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Portfolio</mat-label>
+            <mat-select (valueChange)="triggerValueChangeForPortFolio($event)">
+                <mat-option *ngFor=" let portFolio of portFolioDataArray" [value]="portFolio.id">
+                    {{portFolio.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>System</mat-label>
+            <mat-select (valueChange)="triggerValueChangeForSystemDropDown($event)">
+                <mat-option *ngFor="let system of systemDataArray" [value]="system.id">
+                    {{system.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div class="grid-layout">
+    <div *ngIf="isSector">
+        <kendo-grid [data]="gridDataForSector" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort"
+            class="mat-elevation-z6" [filter]="state.filter" [sortable]="true"
+            [pageable]="{buttonCount: buttonCount,info: info, type: type,pageSizes: pageConfig,previousNext: previousNext}"
+            [filterable]="true" (dataStateChange)="sectorDataChangeEvent($event)">
+            <kendo-grid-column field="companyId" title="Company Id" width="250" [locked]="false">
+            </kendo-grid-column>
+            <kendo-grid-column field="name" title="Company Name" width="250" [locked]="false">
+            </kendo-grid-column>
+            <kendo-grid-column field="address" title="Company Address" width="250" [locked]="false">
+            </kendo-grid-column>
+            <kendo-grid-column field="sectorId" title="Sector Id" width="150" [locked]="false">
+            </kendo-grid-column>
+        </kendo-grid>
+    </div>
+    <div *ngIf="isPortFolio">
+        <kendo-grid [data]="gridDataForPortfolio" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort"
+            class="mat-elevation-z6" [filter]="state.filter" [sortable]="true"
+            [pageable]="{buttonCount: buttonCount,info: info, type: type,pageSizes: pageConfig,previousNext: previousNext}"
+            [filterable]="true" (dataStateChange)="portfolioDataChangeEvent($event)">
+            <kendo-grid-column field="companyId" title="Company Id" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="name" title="Company Name" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="currentPrice" title="Current Price" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="originalPrice" title="Original Price" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="quantity" title="Quantity" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="shareId" title="Share Id" width="150">
+            </kendo-grid-column>
+        </kendo-grid>
+    </div>
+    <div *ngIf="isSystem">
+        <kendo-grid [data]="gridDataForSystem" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort"
+            class="mat-elevation-z6" [filter]="state.filter" [sortable]="true"
+            [pageable]="{buttonCount: buttonCount,info: info, type: type,pageSizes: pageConfig,previousNext: previousNext}"
+            [filterable]="true" (dataStateChange)="systemDataChangeEvent($event)">
+            <kendo-grid-column field="companyId" title="Company Id" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="name" title="Company Name" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="currentPrice" title="Current Price" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="gainLoss" title="Gained Loss" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="originalPrice" title="Original Price" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="quantity" title="Quantity" width="250">
+            </kendo-grid-column>
+        </kendo-grid>
+    </div>
+</div>

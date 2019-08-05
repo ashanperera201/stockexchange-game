@@ -1,0 +1,61 @@
+@import "../../../../styles/mixins";
+
+.layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include respond(tab-port){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__heading{
+        font-size: 2.5rem;
+        font-weight: 400;
+
+        @include respond(tab-port){
+            font-size: 2rem;
+        }
+    }
+
+    &__timer{
+        font-size: 1.5rem;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @include respond(tab-port){
+            font-size: 1.4rem;
+            font-weight: 400;
+            align-items: center;
+        }
+    }
+}
+
+.layout-body{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 1rem;
+    @include respond(phone){
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    &__left{
+        &:not(:first-child){
+            margin-left: .5rem;
+            @include respond(phone){
+                margin: 0;
+            }
+        }
+
+        mat-form-field{
+            @include respond(phone){
+                display: inherit !important;
+            }
+        }
+    }
+}

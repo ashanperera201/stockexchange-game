@@ -1,0 +1,72 @@
+@import "../../../styles/mixins";
+
+.card {
+  cursor: pointer;
+  .card-icon {
+    i {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 3rem;
+    }
+  }
+
+  .legend{
+      span:first-child{
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+ .card-title {
+    color: rgba(#3d4465, .8);
+  }
+
+  .card-icon {
+    i {
+      color: #98a4c7;
+    }
+  }
+
+  .card-footer {
+    border-top: 1px solid #f2f3f8;
+    background: none;
+  }
+
+  .card-title {
+    border-bottom: 1px solid #f2f3f8;
+  }
+}
+
+
+.common-image{
+  height: 6rem;
+}
+
+h3{
+  font-size: 1rem !important;
+  font-weight: bold !important;
+
+  @include respond(big-desktop){
+    font-size: 1.8rem;   
+  }
+}
+
+.header-section{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  h3{
+      font-size: 2rem !important;
+      font-weight: 400 !important;
+      text-transform: uppercase;
+  }
+}
+
+.grid-section{
+  position: relative;
+  top: 1.5rem;
+}

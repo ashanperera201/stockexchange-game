@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>jkl/core/elements/icons/arrow-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3.28888889,51.2444444 C2.93333333,51.6 2.48888889,51.7777778 2,51.7777778 C1.51111111,51.7777778 1.06666667,51.6 0.711111111,51.2444444 C1.46327395e-13,50.5333333 1.46327395e-13,49.3777778 0.711111111,48.6666667 L23.3777778,26 L0.711111111,3.33333333 C1.43191015e-13,2.62222222 1.43191015e-13,1.46666667 0.711111111,0.755555556 C1.42222222,0.0444444444 2.57777778,0.0444444444 3.28888889,0.755555556 L27.2444444,24.7111111 C27.9555556,25.4222222 27.9555556,26.5777778 27.2444444,27.2888889 L3.28888889,51.2444444 Z" id="path-1"></path>
+    </defs>
+    <g id="jkl/core/elements/icons/arrow-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="jkl/core/colors/primary" transform="translate(18.000000, 6.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g mask="url(#mask-2)" fill="#ffffff" id="Rectangle-2">
+                <g transform="translate(-29.000000, -15.000000)">
+                    <rect x="0" y="0" width="84" height="79"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

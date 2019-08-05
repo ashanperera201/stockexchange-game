@@ -1,0 +1,99 @@
+@import "../../../styles/mixins";
+
+.card {
+  .card-icon {
+    i {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 3rem;
+    }
+  }
+
+  .legend{
+      span:first-child{
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+ .card-title {
+    color: rgba(#3d4465, .8);
+  }
+
+  .card-icon {
+    i {
+      color: #98a4c7;
+    }
+  }
+
+  .card-footer {
+    border-top: 1px solid #f2f3f8;
+    background: none;
+  }
+
+  .card-title {
+    border-bottom: 1px solid #f2f3f8;
+  }
+}
+
+.dashboard{
+  &__widgets{
+    cursor: pointer;   
+  }
+}
+
+.set-position-chart{
+  position: relative;
+  bottom: 20px;
+}
+
+.widget-responsive{
+  .card{
+    @include respond(lap-top){
+      height: 14rem;
+    }  
+
+    @include respond(phone){
+      height: 13rem;
+    }
+    .card-body{
+      .card-innerBody{
+        .card-icon{
+          i{
+            @include respond(lap-top){
+             font-size: 3rem;
+            }
+          }
+        }
+        h3{
+          @include respond(lap-top){
+            font-size: 1rem;
+          }  
+
+           @include respond(tab-port){
+            font-size: 1.5rem;
+            letter-spacing: .2rem;
+          }   
+        }
+        p{
+          @include respond(tab-port){
+            font-size: 1.2rem;
+          }  
+        }
+      }
+    }
+  }
+
+  @include respond(tab-port){
+    position: relative;
+    padding-top: 1rem;
+  }
+
+  @include respond(lap-top){
+    position: relative;
+    padding-top: 1rem;
+  }
+}

@@ -1,0 +1,73 @@
+@import "../../../styles/mixins";
+
+.close-btn{
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.header-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    &__summery{
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+        h3{
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: .1rem;
+        }
+    }
+
+    &__groupName{
+        margin-bottom: .5rem;
+        width: 100%;
+        justify-content: flex-start;
+        h4{
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.1rem;
+            font-family: serif;
+        }
+    }
+}
+
+.layout-content{
+    display: flex;
+    flex-direction: row;
+
+    &__profile-content{
+        height: auto;
+        width: 35%;
+        text-align: center;
+        padding: 1rem;
+
+        &:not(:first-child){
+            margin-left: .4rem;
+        }
+
+        img{
+            height: 8rem;
+            border-radius: 50%;
+        }
+
+        &--user-info{
+            position: relative;
+            top: 1rem;
+
+            h4{
+                font-size: 2rem;
+            }
+            h5{
+                font-size: 1rem;
+            }
+            p{
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+    }
+}

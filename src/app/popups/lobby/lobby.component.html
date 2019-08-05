@@ -1,0 +1,21 @@
+<div class="layout">
+    <div class="layout__header">
+        <h1 class="text-muted">Lobby</h1>
+        <div class="layout__creator-name">
+            <span>Group creator :</span>
+            <span> {{creatorName}}</span>
+        </div>
+    </div>
+    <div class="layout__body">
+        <div class="layout__body--elements mat-elevation-z8" *ngFor="let player of joinedPlayers">
+            <img [src]="player.profileUrl" alt="user1">
+            <div class="layout__body--name" fxLayout="row wrap" fxLayoutAlign="center center">
+                <h4>{{player.joinerName}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="layout__button-panel">
+        <button mat-raised-button color="primary" [disabled]="!isCreator" (click)="letsPlayTheGame()">Start
+            Game</button>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="content-layout">
+  <div class="content-layout__header">
+    <h4 class="text-muted">Bank Account Details</h4>
+  </div>
+  <div class="content-layout__balance-label">
+    <h5>Current Account Balance : {{accountBalance}}</h5>
+  </div>
+  <div class="content-layout__form-layout">
+    <mat-form-field>
+      <mat-label>Select Year</mat-label>
+      <mat-select [(ngModel)]="SelectedYear" name="SelectedYear">
+        <mat-option *ngFor="let Year of Years" [value]="Year.year" (click)="filtersChanged()">
+          {{Year.viewYear}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select Month</mat-label>
+      <mat-select [(ngModel)]="SelectedMonth" name="SelectedMonth">
+        <mat-option *ngFor="let Month of Months" [value]="Month.month" (click)="filtersChanged()">
+          {{Month.viewMonth}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="content-layout__chart-layout mat-elevation-z5">
+    <canvas id="chart-line"></canvas>
+  </div>
+</div>

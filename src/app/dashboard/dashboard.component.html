@@ -1,0 +1,82 @@
+<div fxLayout="row wrap">
+    <mat-toolbar class="toolbar-header mat-elevation-z5" color="primary">
+        <button mat-icon-button class="icon-padding" (click)="sidenav.toggle()" [disabled]="!isGameStarted">
+            <mat-icon aria-hidden="true">menu</mat-icon>
+        </button>
+        <span class="fill-remaining-space"></span>
+        <div fxLayout="row wrap" fxLayoutAlign="start center" class="user-menu" fxHide.lt-sm>
+            <div class="user-avatar">
+                <img class="img-fluid" [src]="user.photoURL" alt="user-profile-image">
+            </div>
+            <div class="user-details">{{user.displayName}}</div>
+        </div>
+        <button mat-icon-button [routerLink]="['/dashboard/help']" [disabled]="!isGameStarted">
+            <mat-icon aria-hidden="true">help</mat-icon>
+        </button>
+        <button mat-icon-button (click)="logout()">
+            <mat-icon class="mat-18">logout</mat-icon>
+        </button>
+    </mat-toolbar>
+</div>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav class="mat-elevation-z10" [mode]="mode" fixedTopGap="64" fixedInViewport="true"
+        [opened]="opened">
+        <mat-nav-list>
+            <mat-list-item fxLayout="column" fxLayoutAlign="center stretch" [routerLink]="['/dashboard/home']"
+                (click)="triggerResponsiveClose()">
+                <div fxLayout="row" fxLayoutAlign="start center" class="sidenav-content">
+                    <img src="../../assets/images/dashboard/stats.svg" alt="dashboard" />
+                    <h4 mat-line>Dashboard</h4>
+                </div>
+            </mat-list-item>
+            <mat-list-item fxLayout="column" fxLayoutAlign="center stretch"
+                [routerLink]="['/dashboard/group/create-group']" (click)="triggerResponsiveClose()">
+                <div fxLayout="row" fxLayoutAlign="start center" class="sidenav-content">
+                    <img src="../../assets/images/dashboard/report.svg" alt="dashboard" />
+                    <h4 mat-line>Create Group</h4>
+                </div>
+            </mat-list-item>
+            <mat-list-item fxLayout="column" fxLayoutAlign="center stretch"
+                [routerLink]="['/dashboard/group/join-group']" (click)="triggerResponsiveClose()">
+                <div fxLayout="row" fxLayoutAlign="start center" class="sidenav-content">
+                    <img src="../../assets/images/dashboard/hierarchy.svg" alt="dashboard" />
+                    <h4 mat-line>Join Group</h4>
+                </div>
+            </mat-list-item>
+            <mat-list-item fxLayout="column" fxLayoutAlign="center stretch" [routerLink]="['/dashboard/bank-account']"
+                (click)="triggerResponsiveClose()">
+                <div fxLayout="row" fxLayoutAlign="start center" class="sidenav-content">
+                    <img src="../../assets/images/dashboard/clipboard.svg" alt="dashboard" />
+                    <h4 mat-line>Account Details</h4>
+                </div>
+            </mat-list-item>
+            <mat-list-item fxLayout="column" fxLayoutAlign="center stretch" [routerLink]="['/dashboard/company']"
+                (click)="triggerResponsiveClose()">
+                <div fxLayout="row" fxLayoutAlign="start center" class="sidenav-content">
+                    <img src="../../assets/images/dashboard/browser.svg" alt="dashboard" />
+                    <h4 mat-line>Company Details</h4>
+                </div>
+            </mat-list-item>
+            <mat-list-item fxLayout="column" fxLayoutAlign="center stretch" [routerLink]="['/dashboard/user/update']"
+                (click)="triggerResponsiveClose()">
+                <div fxLayout="row" fxLayoutAlign="start center" class="sidenav-content">
+                    <img src="../../assets/images/dashboard/feedback.svg" alt="dashboard" />
+                    <h4 mat-line>User</h4>
+                </div>
+            </mat-list-item>
+            <mat-list-item fxLayout="column" fxLayoutAlign="center stretch" (click)="triggerBotPlayer()">
+                <div fxLayout="row" fxLayoutAlign="start center" class="sidenav-content">
+                    <img src="../../assets/images/dashboard/growth.svg" alt="dashboard" />
+                    <h4 mat-line>Player Bot</h4>
+                </div>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div fxLayout="row wrap">
+            <div class="dashboard-main">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

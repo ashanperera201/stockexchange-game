@@ -1,0 +1,84 @@
+
+@import "../../../styles/mixins";
+
+
+.calculator-layout{
+  width: 100%;
+  height: auto;
+  &__close{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;    
+    bottom: 1rem;
+    position: relative;
+    left: 1rem;
+  }
+
+  &__header{
+    position: relative;
+    bottom: 1.5rem;
+    h2{
+      font-size: 2rem;
+      font-weight: 400;
+      font-family: serif;
+      text-transform: uppercase;
+    }
+  }
+
+  &__body{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;   
+    position: relative;
+    bottom: .8rem;
+
+    &--calculation{
+      padding: 1rem;
+      width: 50%;
+
+      .mat-form-field {
+        display: inherit;
+      }
+
+      &--field{
+        display: inline-block;
+        width: 100%;
+
+        .mat-form-field {
+          width: 49%;
+          &:not(:first-child){
+            margin-left: .5rem;
+          }
+        }
+
+        &:not(:first-child){
+          margin-left: .5rem;
+        }
+      }
+
+      &--btn-section{
+        button{
+          width: 7rem;
+          border-radius: 0;
+          
+           &:not(:first-child){
+              margin-left: 1rem;
+           }
+        }
+      }
+    }
+
+    &--view{
+      width: 50%;
+      padding: 1rem;
+
+      .mat-form-field {
+        display: inherit;
+      }
+
+      &:not(:first-child){
+        margin-left: .5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import "variables";
+@import "base";
+@import "animations";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+//dont awesome
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+.p-t-2{
+    padding-top: 2rem !important;
+}
+
+.m-t-2{
+    margin-top: 2rem !important;
+}
+
+.m-l-2{
+    margin-left: 2rem !important;
+}
+
+.p-t-3{
+    padding-top: 3rem !important;
+}
+
+.p-t-4{
+    padding-top: 4rem;
+}
+
+.p-t-8{
+    padding-top: 8rem;
+}
+
+.p-t-15{
+    padding-top: 1.5rem !important;
+}
+
+.mat-list-base {
+    padding-top: 2rem !important;
+}
+
+button:focus {
+   outline: none !important;
+}
+
+.login__register-mode{
+    .mat-form-field-infix{
+        padding: 0.3em 0 1em 0 !important;
+    }
+
+    .mat-form-field-label-wrapper {
+        top: -1.2em !important;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        color: rgba(0,0,0,.87) !important;
+    }
+}
+
+.p-2{
+    padding: 2rem !important;
+}
+
+.mat-dialog-container{
+    border-radius: 0 !important;
+}
+
+.text-bold{
+    font-weight: bold;
+}

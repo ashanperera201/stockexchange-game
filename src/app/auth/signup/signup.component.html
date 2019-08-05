@@ -1,0 +1,58 @@
+<div class="register">
+    <div class="register__text-box">
+        <form autocomplete="off" [formGroup]="userRegisterFormGroup" class="sign-up mat-elevation-z10">
+            <div class="register__text-box--align">
+                <h4 class="register__text-box--heading">Register</h4>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="center stretch">
+                <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+                    fxLayoutAlign="space-between stretch" fxFlex="80">
+                    <mat-form-field appearance="outline" fxFlex="48">
+                        <mat-label>Please enter email</mat-label>
+                        <input matInput placeholder="Email" required formControlName="email">
+                        <mat-error *ngIf="userRegisterFormGroup.get('email').invalid">{{getErrorMessageForEmail()}}
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="48">
+                        <mat-label>Please enter user name</mat-label>
+                        <input matInput placeholder="UserName" required formControlName="userName">
+                        <mat-error>This field is required.</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+                    fxLayoutAlign="space-between stretch" fxFlex="80">
+                    <mat-form-field appearance="outline" fxFlex="48">
+                        <input matInput [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error>This field is required.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="48">
+                        <mat-label>Please enter NIC</mat-label>
+                        <input matInput placeholder="NIC" required formControlName="nic">
+                        <mat-error>This field is required.</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxLayoutAlign.lt-md="space-evenly stretch" fxFlex="80">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Please enter Contact</mat-label>
+                        <input type="tel" matInput placeholder="Contact" formControlName="contactNo"
+                            onkeypress='return (event.charCode >= 48 && event.charCode <= 57 && event.charCode <= 191)'
+                            maxlength=9>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxLayoutAlign.lt-md="space-evenly stretch" fxFlex="80">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Please enter address</mat-label>
+                        <input type="tel" matInput placeholder="Addresss" formControlName="address">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="register__text-box__btn--config">
+                <button mat-raised-button (click)="registerUser()" color="primary" type="button"
+                    [disabled]="userRegisterFormGroup.invalid">Register</button>
+                <button type="button" mat-raised-button class="ml-3" (click)="triggerBack()">Back</button>
+            </div>
+        </form>
+    </div>
+</div>

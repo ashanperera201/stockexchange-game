@@ -1,0 +1,62 @@
+<div class="calculator-layout">
+  <div class="calculator-layout__close">
+    <button mat-icon-button type="button" (click)="closeModal()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="calculator-layout__header">
+    <h2>What if calculate</h2>
+  </div>
+
+  <div class="calculator-layout__body">
+    <form class="calculator-layout__body--calculation mat-elevation-z5" autocomplete="off"
+      [formGroup]="calculationFormGroup">
+      <div class="calculator-layout__body--calculation--field">
+        <mat-form-field>
+          <input matInput [matDatepicker]="from" placeholder="Buy Date" formControlName="buyDate">
+          <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+          <mat-datepicker #from></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="to" placeholder="Sell Date" formControlName="sellDate">
+          <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+          <mat-datepicker #to></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <input matInput placeholder="Purchased Price per Share" formControlName="purchPrice">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Quantity" formControlName="quantity">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Purchased Commission" formControlName="purchComm">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Sold Price per Share" formControlName="soldPrice">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Sold Commission" formControlName="soldComm">
+      </mat-form-field>
+      <div class="calculator-layout__body--calculation--btn-section">
+        <button mat-raised-button color="primary" (click)="triggerCalculate()">Calculate</button>
+        <button mat-raised-button color="primary" (click)="triggerReset()">Reset</button>
+      </div>
+    </form>
+
+    <form class="calculator-layout__body--view mat-elevation-z5" autocomplete="off">
+      <mat-form-field>
+        <input matInput placeholder="Total Investments(Rs.)" name="totalInvest" [(ngModel)]="totalInvest">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Gross Return(Rs.)" name="grossReturn" [(ngModel)]="grossReturn">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Profit from Stock Sale(Rs.)" name="profit" [(ngModel)]="profit">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Net Return on Stock Investments" name="amount" [(ngModel)]="amount">
+      </mat-form-field>
+    </form>
+  </div>
+</div>

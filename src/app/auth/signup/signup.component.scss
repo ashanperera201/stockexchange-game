@@ -1,0 +1,43 @@
+@import "../../../styles/mixins";
+
+.register{
+    &__text-box{        
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        background-color: #FFF;
+        height: auto;
+        width: 60rem;
+
+        &--align{
+            position: relative;
+            padding-top: 2rem;
+            bottom: 1rem;
+        }
+
+        &--heading{
+            text-transform: uppercase;
+            font: 300;
+            font-size: 1.5rem;
+            letter-spacing: 1rem;
+        }
+
+        &__button{
+            margin-bottom: 1.5rem;
+        }
+
+        &__btn--config{
+            padding-top: 2rem;
+            position: relative;
+            bottom: 2rem;
+        }
+    }
+}
+
+.mat-raised-button{
+    width: 10rem; 
+    height: 3rem; 
+    border-radius: 0;
+}   

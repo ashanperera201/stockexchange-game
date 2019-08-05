@@ -1,0 +1,61 @@
+<div class="header-section">
+  <h3 class="text-muted">Company Search</h3>
+</div>
+<div class="row m-t-2 widgets">
+  <div class="col-md-6 col-lg-3" (click)="getCompany('S1')">
+    <div class="card border-0 rounded-0 mat-elevation-z5">
+      <div class="card-body">
+        <div class="card-innerBody d-flex align-items-center">
+          <img class="common-image" src="../../../assets/images/company/graph.svg" alt="finance">
+          <div class="ml-auto">
+            <h3 class="card-label text-right text-muted">Finance</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3" (click)="getCompany('S2')">
+    <div class="card border-0 rounded-0 mat-elevation-z5">
+      <div class="card-body">
+        <div class="card-innerBody d-flex align-items-center">
+          <img class="common-image" src="../../../assets/images/company/hospital.svg" alt="hospital">
+          <div class="ml-auto">
+            <h3 class="card-label text-right text-muted">Hospital</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3" (click)="getCompany('S3')">
+    <div class="card border-0 rounded-0 mat-elevation-z5">
+      <div class="card-body">
+        <div class="card-innerBody d-flex align-items-center">
+          <img class="common-image" src="../../../assets/images/company/school.svg" alt="education">
+          <div class="ml-auto">
+            <h3 class="card-label text-right text-muted">Education</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3" (click)="getCompany('S4')">
+    <div class="card border-0 rounded-0 mat-elevation-z5">
+      <div class="card-body">
+        <div class="card-innerBody d-flex align-items-center">
+          <img class="common-image" src="../../../assets/images/company/factory.svg" alt="manufacturing">
+          <div class="ml-auto">
+            <h3 class="card-label text- text-muted">Manufacturing</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid-section">
+  <kendo-grid [data]="companyData" class="mat-elevation-z5" [height]="300">
+    <kendo-grid-column field="name" title="Company Name" width="250">
+    </kendo-grid-column>
+    <kendo-grid-column field="address" title="Company Address" width="200">
+    </kendo-grid-column>
+  </kendo-grid>
+</div>

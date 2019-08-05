@@ -1,0 +1,26 @@
+<div class="create-group">
+    <div class="create-group__form mat-elevation-z4">
+        <h4 class="create-group__form-heading text-muted">Create group</h4>
+        <form class="create-group__form-inputs" [formGroup]="createGroup" autocomplete="off">
+            <div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign.lt-md="space-evenly stretch"
+                fxLayoutAlign="space-between stretch" fxFlex="100">
+                <mat-form-field appearance="outline" fxFlex="48">
+                    <mat-label>Group Name</mat-label>
+                    <input matInput placeholder="Group Name" required formControlName="groupName">
+                    <mat-error>This field is required.</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="48">
+                    <mat-label>No of players</mat-label>
+                    <input matInput placeholder="No of players" required formControlName="players"
+                        onkeypress='return (event.charCode >= 48 && event.charCode <= 57 && event.charCode <= 191)'
+                        maxlength=1>
+                    <mat-error>This field is required.</mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+        <button mat-raised-button color="primary" class="create-group__form-button" (click)="triggerCreateGroup()"
+            [disabled]='createGroup.invalid'>Create Group</button>
+        <button mat-raised-button color="primary" class="create-group__form-button"
+            routerLink="/dashboard/home">Back to Home</button>
+    </div>
+</div>

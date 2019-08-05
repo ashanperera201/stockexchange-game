@@ -1,0 +1,97 @@
+@import '../styles/animations';
+
+//MEDIA QUERY MANAGER
+/*
+ 0 - 600px      : Phone
+ 600 - 900px    : tablet portrait
+ 900 - 1200px   : tablet landscape
+ [1200 - 1800]  is where our normal styles apply
+ 1800px : Big desktop
+
+    breakpoint argument choices
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+
+    1em = 16px
+
+    WAY TO APPLY RESPONSIVE;
+    ORDER : Base + typography > General Layout + Grid > Page Layout > Components
+*/
+
+@mixin respond($breakpoint) {
+    @if($breakpoint == phone){
+        //600/16 = 37.5
+        @media (max-width: 37.5em){ //600px
+            @content
+        };
+    }
+    
+    @if($breakpoint == tab-port){
+
+        @media (max-width: 56.25em){ //900px
+            @content
+        };
+    }
+
+    @if($breakpoint == tab-land){
+        @media (max-width: 75em){ //1200px
+            @content
+        };
+    }
+
+    @if($breakpoint == lap-top){
+        @media (max-width: 90em){ //1366
+            @content
+        };
+    }
+
+    @if($breakpoint == big-desktop){
+        @media (max-width: 112.5em){ //1800px
+            @content
+        };
+    }
+}
+
+@mixin bootstrap-auth-button {
+    width: 15rem !important;
+    background-color: #647DFF;
+    border-radius: 0rem;
+    border-color: #7D8EE7;
+    -moz-box-shadow: -1px 4px 17px -1px rgba(0,0,0,0.76);
+    box-shadow: 4px 6px 17px -2px rgba(0,0,0,0.61);
+    -webkit-box-shadow: 4px 6px 17px -2px rgba(0,0,0,0.61);
+    -moz-box-shadow: 4px 6px 17px -2px rgba(0,0,0,0.61);
+}
+
+@mixin common-heading-behaviour {
+    display: inline-block;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@mixin customized-mat-button {
+    border-radius: 0 !important;
+    width: auto !important;
+    height: 3.5rem !important;
+    font-size: 1rem !important;
+    text-transform: uppercase;   
+
+    @include respond(phone){
+      width: 100% !important;
+    }
+
+    @include respond(tab-port){
+        width: 100% !important;
+    }
+
+}
+
+
+@mixin common-flex-layout-rowise {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;    
+}
